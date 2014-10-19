@@ -20,3 +20,4 @@ echo "-- format partitions"
 mkfs.fat -F32 /dev/sda1
 /usr/bin/mkfs.ext3 /dev/sda2
 /usr/bin/mount  /dev/sda2 /mnt
+/usr/bin/mount  /dev/sda1 /mnt/boot
