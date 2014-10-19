@@ -10,11 +10,11 @@ echo "-- set partition positions"
 
 echo "-- set partition names"
 /usr/bin/sgdisk --change-name 1:boot /dev/sda
-/usr/bin/sgdisk --change-name 1:home /dev/sda
+/usr/bin/sgdisk --change-name 2:home /dev/sda
 
 echo "-- set partition types"
 /usr/bin/sgdisk --typecode=1:ef00 /dev/sda
-/usr/bin/sgdisk --typecode=1:8300 /dev/sda
+/usr/bin/sgdisk --typecode=2:8300 /dev/sda
 
 echo "-- format partitions"
 mkfs.fat -F32 /dev/sda1
