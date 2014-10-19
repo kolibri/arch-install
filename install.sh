@@ -12,7 +12,7 @@ echo '==> bootstrapping the base installation'
 echo '==> generating the filesystem table'
 /usr/bin/genfstab -p ${TARGET_DIR} >> "${TARGET_DIR}/etc/fstab"
 
-cp ${CONFIG_SCRIPT} {TARGET_DIR}/root/${CONFIG_SCRIPT}
+cp ${CONFIG_SCRIPT} ${TARGET_DIR}/root/${CONFIG_SCRIPT}
 
 echo "next: arch-chroot ${TARGET_DIR}"
 echo "next: unmount ${TARGET_DIR}"
