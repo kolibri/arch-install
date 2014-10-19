@@ -9,10 +9,10 @@ TIMEZONE='UTC+1'
 CONFIG_SCRIPT='arch-config.sh'
 TARGET_DIR='/mnt'
 
-echo '${FQDN}' > /etc/hostname
+echo ${FQDN} > /etc/hostname
 /usr/bin/ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
-echo 'KEYMAP=${KEYMAP}' > /etc/vconsole.conf
-/usr/bin/sed -i 's/#${LANGUAGE}/${LANGUAGE}/' /etc/locale.gen
+echo "KEYMAP=${KEYMAP}" > /etc/vconsole.conf
+/usr/bin/sed -i "s/#${LANGUAGE}/${LANGUAGE}/" /etc/locale.gen
 /usr/bin/locale-gen
 /usr/bin/mkinitcpio -p linux
 /usr/bin/usermod --password ${ROOT_PASSWORD} root
@@ -21,8 +21,9 @@ echo 'KEYMAP=${KEYMAP}' > /etc/vconsole.conf
 /usr/bin/groupadd ${USER_NAME}
 /usr/bin/useradd --password ${USER_PASSWORD} --comment 'admin User' --create-home --gid users --groups ${USER_NAME} ${USER_NAME}
 echo 'Defaults env_keep += "SSH_AUTH_SOCK"' > /etc/sudoers.d/10_${USER_NAME}
-echo '${USER_NAME} ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers.d/10_${USER_NAME}
+echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/10_${USER_NAME}
 /usr/bin/chmod 0440 /etc/sudoers.d/10_${USER_NAME}
+
 /usr/bin/mkdir -p /home/${USER_NAME}/.ssh
 
 /usr/bin/pacman -S gummiboot --noconfirm
