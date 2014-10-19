@@ -25,7 +25,11 @@ echo '${USER_NAME} ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers.d/10_${USER_NAME}
 /usr/bin/chmod 0440 /etc/sudoers.d/10_${USER_NAME}
 /usr/bin/mkdir -p /home/${USER_NAME}/.ssh
 
+/usr/bin/pacman -S gummiboot --noconfirm
+gummiboot --path=/boot install
 
+/usr/bin/cp loader.conf /boot/loader/loader.conf
+/usr/bin/cp arch.conf /boot/loader/entries/arch.conf
 
 # clean up
 /usr/bin/pacman -Rcns --noconfirm gptfdisk
