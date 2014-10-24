@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 FQDN='user.ko'
 KEYMAP='de'
 LANGUAGE='en_US.UTF-8'
@@ -25,9 +27,11 @@ echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/10_${USER_NAME}
 /usr/bin/chmod 0440 /etc/sudoers.d/10_${USER_NAME}
 
 /usr/bin/mkdir -p /home/${USER_NAME}/.ssh
+mv /root/init_utils.sh /home/cid/init_utils.sh
 
+# bootloader
 /usr/bin/pacman -S gummiboot --noconfirm
-gummiboot --path=/boot install
+/usr/bin/gummiboot --path=/boot install
 
 /usr/bin/cp loader.conf /boot/loader/loader.conf
 /usr/bin/cp arch.conf /boot/loader/entries/arch.conf
@@ -35,3 +39,4 @@ gummiboot --path=/boot install
 # clean up
 /usr/bin/pacman -Rcns --noconfirm gptfdisk
 /usr/bin/pacman -Scc --noconfirm
+

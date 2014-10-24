@@ -13,6 +13,7 @@ echo '==> generating the filesystem table'
 /usr/bin/genfstab -p ${TARGET_DIR} >> "${TARGET_DIR}/etc/fstab"
 
 cp ${CONFIG_SCRIPT} ${TARGET_DIR}/root/${CONFIG_SCRIPT}
+cp init_utils.sh ${TARGET_DIR}/root/init_utils.sh
 cp arch.conf ${TARGET_DIR}/root/arch.conf
 cp loader.conf ${TARGET_DIR}/root/loader.conf
 
