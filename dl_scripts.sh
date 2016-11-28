@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 curl -O https://raw.githubusercontent.com/kolibri/arch-install/master/arch-config.sh
-curl -O https://raw.githubusercontent.com/kolibri/arch-install/master/init_utils.sh
 curl -O https://raw.githubusercontent.com/kolibri/arch-install/master/install.sh
 curl -O https://raw.githubusercontent.com/kolibri/arch-install/master/prepare-hdd.sh
 
