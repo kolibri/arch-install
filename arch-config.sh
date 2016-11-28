@@ -8,8 +8,6 @@ USER_PASSWORD=$(/usr/bin/openssl passwd -crypt 'user')
 ROOT_PASSWORD=$(/usr/bin/openssl passwd -crypt 'root')
 TIMEZONE='UTC+1'
 
-CONFIG_SCRIPT='arch-config.sh'
-TARGET_DIR='/mnt'
 
 echo ${FQDN} > /etc/hostname
 /usr/bin/ln -s /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
