@@ -8,6 +8,5 @@ curl -O https://raw.githubusercontent.com/kolibri/arch-install/master/arch.conf
 curl -O https://raw.githubusercontent.com/kolibri/arch-install/master/loader.conf
 
 chmod +x arch-config.sh
-chmod +x init_utils.sh
 chmod +x install.sh
 chmod +x prepare-hdd.sh
